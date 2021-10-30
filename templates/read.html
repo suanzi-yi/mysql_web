@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读取数据</title>
+</head>
+<body>
+<li><a href={{url_for('index')}}>返回主页</a></li>
+<li><a href={{url_for('write')}}>写入数据</a></li>
+<form method="post">
+    {{form.hidden_tag()}}
+    {{form.sql.label}} {{form.sql()}}
+    {{form.submit()}}
+</form>
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h3>执行结果：</h3>
+        <h1>{{sql}}</h1>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
